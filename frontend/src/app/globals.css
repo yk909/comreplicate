@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+.vertical-line {
+  border-left: 1px solid #000;
+  height: 100% !important;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+ }
+
+
+
+ :where(.css-dev-only-do-not-override-1kuana8).ant-pagination .ant-pagination-item a {
+  color: white;
+ }
+
+ :where(.css-dev-only-do-not-override-1kuana8).ant-pagination .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis, :where(.css-dev-only-do-not-override-1kuana8).ant-pagination .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis  {
+  color: white;
+ }
+
+ .antdesign svg {
+  color: white;
+ }
+
+ :where(.css-dev-only-do-not-override-1kuana8).ant-pagination .ant-pagination-item-active a {
+  color: black;
+}
+
+:where(.css-dev-only-do-not-override-1kuana8).ant-pagination .ant-pagination-next button {
+  color: white;
+}
+
+:where(.css-dev-only-do-not-override-1kuana8).ant-pagination .ant-pagination-prev button {
+  color: white;
+}
+
+
+.css-dev-only-do-not-override-1kuana8.ant-pagination.light .ant-pagination-item a {
+  color: black; /* Dark text for light backgrounds */
+}
+
+.css-dev-only-do-not-override-1kuana8.ant-pagination.light .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis,
+.css-dev-only-do-not-override-1kuana8.ant-pagination.light .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+  color: black; /* Dark text for visibility */
+}
+
+.antdesign.light svg {
+  color: black; /* Dark icons for light mode */
+}
+
+.css-dev-only-do-not-override-1kuana8.ant-pagination.light .ant-pagination-item-active a {
+  color: white; /* Light active text, consider changing background if needed */
+  background-color: #555; /* Dark background for active item to make white text visible */
+}
+
+.css-dev-only-do-not-override-1kuana8.ant-pagination.light .ant-pagination-next button,
+.css-dev-only-do-not-override-1kuana8.ant-pagination.light .ant-pagination-prev button {
+  color: black; /* Dark arrow buttons for light backgrounds */
+}
+
+
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.avatar-image {
+  display: block;
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+  border-radius: 50%;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip text */
+  z-index: 1;
+}
+
+.avatar-wrapper:hover .tooltip {
+  visibility: visible;
+}
+
+.spinner .path {
+  stroke: #5652bf;
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes dash {
+  0% {
+      stroke-dasharray: 1, 187;
+      stroke-dashoffset: 0;
+  }
+  50% {
+      stroke-dasharray: 90, 187;
+      stroke-dashoffset: -35;
+  }
+  100% {
+      stroke-dasharray: 90, 187;
+      stroke-dashoffset: -124;
+  }
+}
